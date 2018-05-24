@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  #友盟U-Share 在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/qu">
+<meta name="description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integra">
 <meta property="og:type" content="article">
 <meta property="og:title" content="U-Share友盟分享SDK使用封装">
 <meta property="og:url" content="http://yoursite.com/2017/06/01/U-Share友盟分享SDK使用封装/index.html">
 <meta property="og:site_name" content="HANNE&#39;S BLOG">
-<meta property="og:description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  #友盟U-Share 在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/qu">
+<meta property="og:description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integra">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5914307-d44b27016096acf2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-24T02:32:17.637Z">
+<meta property="og:updated_time" content="2018-05-24T07:53:13.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="U-Share友盟分享SDK使用封装">
-<meta name="twitter:description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  #友盟U-Share 在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/qu">
+<meta name="twitter:description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integra">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5914307-d44b27016096acf2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -304,7 +304,6 @@
         <p>最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。</p>
 <p>GitHub 代码地址：<a href="https://github.com/xingfudeyutian/UShareUtils.git" target="_blank" rel="noopener">https://github.com/xingfudeyutian/UShareUtils.git</a></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/5914307-d44b27016096acf2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="友盟"></p>
-<p>#友盟U-Share</p>
 <p>在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程<br>白名单,URL Scheme，回调地址等等<br>文档：<a href="http://dev.umeng.com/social/ios/quick-integration" target="_blank" rel="noopener">http://dev.umeng.com/social/ios/quick-integration</a></p>
 <p>调用方式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#warning --- U-Share测试</span><br><span class="line"></span><br><span class="line">SPShareModel * shareModel = [[SPShareModel alloc] init];</span><br><span class="line">shareModel.thumbURL = @&quot;https://mobile.umeng.com/images/pic/home/social/img-1.png&quot;;</span><br><span class="line">shareModel.shareTitle = @&quot;欢迎使用【友盟+】社会化组件U-Share&quot;;</span><br><span class="line">shareModel.shareDesc = @&quot;欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！&quot;;</span><br><span class="line">shareModel.webpageUrl = @&quot;http://mobile.umeng.com/social&quot;;</span><br><span class="line">shareModel.currentViewController = self;</span><br><span class="line"></span><br><span class="line">[[SPUShareUtils sharedUShareUtil] showShareMenuWithModel:shareModel];</span><br></pre></td></tr></table></figure>
