@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -340,8 +340,8 @@
       
         
           
-            <img src="/3018/05/29/Hanne-s-简历/hanne.jpeg" class="slug">
-<center>iOS软件开发工程师 · 北京<em>**</em>信息技术股份有限公司<br>女 | 28岁 | 本科 | 5年工作经验 | 北京 | 目前在职<br><a href="https://github.com/xingfudeyutian" target="_blank" rel="noopener">Hanne’s Github</a>  |  <a href="Blog: http://hanne.xyz" target="_blank" rel="noopener">Hanne’s Blog</a></center>
+          
+iOS软件开发工程师 · 北京**信息技术股份有限公司女 | 28岁 | 本科 | 5年工作经验 | 北京 | 目前在职Hanne’s Github  |  Hanne’s Blog
 
 
 
@@ -349,6 +349,13 @@
 
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/3018/05/29/Hanne-s-简历/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -488,14 +495,17 @@
       
         
           
-            <p>最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。<br>GitHub代码地址：<a href="https://github.com/xingfudeyutian/QiniuUtils.git" target="_blank" rel="noopener">https://github.com/xingfudeyutian/QiniuUtils.git</a></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/5914307-7a7c9db44e3dcdf0.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="七牛云"></p>
-<p>在使用七牛云之前 需要下载Qiniu SDK并根据官方文档配置工程<br>文档：<a href="https://developer.qiniu.com/kodo/sdk/1240/objc" target="_blank" rel="noopener">https://developer.qiniu.com/kodo/sdk/1240/objc</a></p>
-<p>使用方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#warning ---测试七牛上传图片</span><br><span class="line">SPQiniuUtils * qiniuUtil = [[SPQiniuUtils alloc] init];</span><br><span class="line">qiniuUtil.delegate = self;</span><br><span class="line"></span><br><span class="line">[qiniuUtil uploadImageToQNFileArray:qiniuData];</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#import &lt;QiniuSDK.h&gt;</span><br><span class="line"></span><br><span class="line">@protocol SPQiniuUtilsDelegage &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">- (void)uploadImageDelegate:(NSMutableArray *)qiniuModelArray;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface SPQiniuUtils : NSObject</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id &lt;SPQiniuUtilsDelegage&gt;delegate;</span><br><span class="line"></span><br><span class="line">- (void)uploadImageToQNFileArray:(NSArray *)fileArray;</span><br><span class="line">+ (NSString*)qiNiuDomainName;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#import &quot;SPQiniuUtils.h&quot;</span><br><span class="line"></span><br><span class="line">#import &quot;AFNetworking.h&quot;</span><br><span class="line">#import &quot;UIImageView+AFNetworking.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation SPQiniuUtils </span><br><span class="line"></span><br><span class="line">//fileArray可以改为文件的data，不传递数组</span><br><span class="line">- (void)uploadImageToQNFileArray:(NSArray *)fileArray &#123;</span><br><span class="line"></span><br><span class="line">//请求token地址</span><br><span class="line">NSString * apiPath;</span><br><span class="line"></span><br><span class="line">//视频地址</span><br><span class="line">if(fileArray!=nil &amp;&amp; fileArray.count==0 &amp;&amp; [fileArray[0] isKindOfClass:[NSString class]])&#123;</span><br><span class="line">apiPath = QINIU_UPLOAD_VIDEO_TOKEN;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">apiPath = QINIU_UPLOAD_IMAGE_TOKEN;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//获取上传图片用的七牛云token</span><br><span class="line">[SPNetworkUtils postRequestWithPath:apiPath params:nil completed:^(id responseData) &#123;</span><br><span class="line">NSLog(@&quot;%@&quot;,responseData);</span><br><span class="line">if (responseData[@&quot;data&quot;])&#123;</span><br><span class="line">[self uploadWithToken:responseData[@&quot;data&quot;] andFileArray:fileArray];</span><br><span class="line">&#125;else&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)uploadWithToken:(NSString *)token andFileArray:(NSArray *)fileArray</span><br><span class="line">&#123;</span><br><span class="line">//华北</span><br><span class="line">QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) &#123;</span><br><span class="line">builder.zone = [QNZone zone1];</span><br><span class="line">&#125;];</span><br><span class="line">QNUploadManager *upManager = [[QNUploadManager alloc] initWithConfiguration:config];</span><br><span class="line">QNUploadOption *uploadOption = [[QNUploadOption alloc] initWithMime:nil progressHandler:^(NSString *key, float percent) &#123;</span><br><span class="line">NSLog(@&quot;percent == %.2f&quot;, percent);</span><br><span class="line">&#125;params:nil checkCrc:NO cancellationSignal:nil];</span><br><span class="line"></span><br><span class="line">NSData * fileData =  = [NSData dataWithContentsOfFile:fileArray[0]];</span><br><span class="line">[upManager putData:fileData key:nil token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) &#123;</span><br><span class="line">//这里是返回的key</span><br><span class="line"></span><br><span class="line">&#125; option:uploadOption];  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (NSString*)qiNiuDomainName&#123;</span><br><span class="line">return @&quot;http://oopbjmcxn.bkt.clouddn.com/&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+          最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。GitHub代码地址：https://github.com/xingfudeyutian/QiniuUtils.git
 
-          
+在使用七牛云之前 需要下载Qiniu SDK并根据官方文档配置工程文档：https://developer.qiniu.
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/01/七牛云文件上传封装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -635,17 +645,18 @@
       
         
           
-            <p>最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。</p>
-<p>GitHub 代码地址：<a href="https://github.com/xingfudeyutian/UShareUtils.git" target="_blank" rel="noopener">https://github.com/xingfudeyutian/UShareUtils.git</a></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/5914307-d44b27016096acf2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="友盟"></p>
-<p>在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程<br>白名单,URL Scheme，回调地址等等<br>文档：<a href="http://dev.umeng.com/social/ios/quick-integration" target="_blank" rel="noopener">http://dev.umeng.com/social/ios/quick-integration</a></p>
-<p>调用方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#warning --- U-Share测试</span><br><span class="line"></span><br><span class="line">SPShareModel * shareModel = [[SPShareModel alloc] init];</span><br><span class="line">shareModel.thumbURL = @&quot;https://mobile.umeng.com/images/pic/home/social/img-1.png&quot;;</span><br><span class="line">shareModel.shareTitle = @&quot;欢迎使用【友盟+】社会化组件U-Share&quot;;</span><br><span class="line">shareModel.shareDesc = @&quot;欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！&quot;;</span><br><span class="line">shareModel.webpageUrl = @&quot;http://mobile.umeng.com/social&quot;;</span><br><span class="line">shareModel.currentViewController = self;</span><br><span class="line"></span><br><span class="line">[[SPUShareUtils sharedUShareUtil] showShareMenuWithModel:shareModel];</span><br></pre></td></tr></table></figure>
-<p>具体代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#import &lt;UShareUI/UShareUI.h&gt;</span><br><span class="line"></span><br><span class="line">@interface SPShareModel : NSObject</span><br><span class="line"></span><br><span class="line">@property (nonatomic, copy)NSString * thumbURL;</span><br><span class="line">@property (nonatomic, copy)NSString * shareTitle;</span><br><span class="line">@property (nonatomic, copy)NSString * shareDesc;</span><br><span class="line">@property (nonatomic, copy)NSString * webpageUrl;</span><br><span class="line">@property (nonatomic, strong)UIViewController * currentViewController;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@interface SPUShareUtils : NSObject</span><br><span class="line"></span><br><span class="line">+ (SPUShareUtils *)sharedUShareUtil;</span><br><span class="line">-(void)showShareMenuWithModel:(SPShareModel*)shareModel;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;SPUShareUtils.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@implementation SPShareModel</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@interface SPUShareUtils ()</span><br><span class="line"></span><br><span class="line">@property (nonatomic ,strong)SPShareModel * shareModel;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation SPUShareUtils</span><br><span class="line"></span><br><span class="line">+ (SPUShareUtils *)sharedUShareUtil</span><br><span class="line">&#123;</span><br><span class="line">static SPUShareUtils *uShareUtils = nil;</span><br><span class="line"></span><br><span class="line">static dispatch_once_t onceToken;</span><br><span class="line">dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line"></span><br><span class="line">uShareUtils = [[self alloc] init];</span><br><span class="line">&#125;);</span><br><span class="line">return uShareUtils;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)showShareMenuWithModel:(SPShareModel*)shareModel</span><br><span class="line">&#123;</span><br><span class="line">self.shareModel = shareModel;</span><br><span class="line">//显示分享面板</span><br><span class="line">[UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) &#123;</span><br><span class="line">// 根据获取的platformType确定所选平台进行下一步操作</span><br><span class="line">NSLog(@&quot;%ld&quot;,platformType);</span><br><span class="line">[self shareWebPageToPlatformType:platformType];</span><br><span class="line">&#125;];</span><br><span class="line">&#125;</span><br><span class="line">- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType</span><br><span class="line">&#123;</span><br><span class="line">//创建分享消息对象</span><br><span class="line">UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];</span><br><span class="line"></span><br><span class="line">//创建网页内容对象</span><br><span class="line">UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:self.shareModel.shareTitle descr:self.shareModel.shareDesc thumImage:self.shareModel.thumbURL];</span><br><span class="line">//设置网页地址</span><br><span class="line">shareObject.webpageUrl = self.shareModel.webpageUrl;</span><br><span class="line"></span><br><span class="line">//分享消息对象设置分享内容对象</span><br><span class="line">messageObject.shareObject = shareObject;</span><br><span class="line"></span><br><span class="line">//调用分享接口</span><br><span class="line">[[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self.shareModel.currentViewController completion:^(id data, NSError *error) &#123;</span><br><span class="line">if (error) &#123;</span><br><span class="line">UMSocialLogInfo(@&quot;************Share fail with error %@*********&quot;,error);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">if ([data isKindOfClass:[UMSocialShareResponse class]]) &#123;</span><br><span class="line">UMSocialShareResponse *resp = data;</span><br><span class="line">//分享结果消息</span><br><span class="line">UMSocialLogInfo(@&quot;response message is %@&quot;,resp.message);</span><br><span class="line">//第三方原始返回的数据</span><br><span class="line">UMSocialLogInfo(@&quot;response originalResponse data is %@&quot;,resp.originalResponse);</span><br><span class="line"></span><br><span class="line">&#125;else&#123;</span><br><span class="line">UMSocialLogInfo(@&quot;response data is %@&quot;,data);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//        [self alertWithError:error];</span><br><span class="line">&#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+          最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。
+GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git
 
-          
+在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/01/U-Share友盟分享SDK使用封装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -813,7 +824,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -912,13 +923,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 
