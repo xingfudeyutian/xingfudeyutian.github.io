@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integra">
+<meta name="description" content="GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integration">
 <meta property="og:type" content="article">
 <meta property="og:title" content="U-Share友盟分享SDK使用封装">
 <meta property="og:url" content="http://yoursite.com/2017/06/01/U-Share友盟分享SDK使用封装/index.html">
 <meta property="og:site_name" content="HANNE&#39;S BLOG">
-<meta property="og:description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integra">
+<meta property="og:description" content="GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integration">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5914307-d44b27016096acf2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-06-04T06:03:51.469Z">
+<meta property="og:updated_time" content="2018-06-25T02:09:03.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="U-Share友盟分享SDK使用封装">
-<meta name="twitter:description" content="最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。 GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git  在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integra">
+<meta name="twitter:description" content="GitHub 代码地址：https://github.com/xingfudeyutian/UShareUtils.git在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程白名单,URL Scheme，回调地址等等文档：http://dev.umeng.com/social/ios/quick-integration">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5914307-d44b27016096acf2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-04T14:03:51+08:00">
-                2018-06-04
+              <time title="Post modified" itemprop="dateModified" datetime="2018-06-25T10:09:03+08:00">
+                2018-06-25
               </time>
             
           </span>
@@ -365,10 +365,9 @@
       
 
       
-        <p>最近帮朋友做项目，简单集成了一些SDK。在这里和大家分享。</p>
-<p>GitHub 代码地址：<a href="https://github.com/xingfudeyutian/UShareUtils.git" target="_blank" rel="noopener">https://github.com/xingfudeyutian/UShareUtils.git</a></p>
+        <p>GitHub 代码地址：<a href="https://github.com/xingfudeyutian/UShareUtils.git" target="_blank" rel="noopener">https://github.com/xingfudeyutian/UShareUtils.git</a><br>在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程<br>白名单,URL Scheme，回调地址等等<br>文档：<a href="http://dev.umeng.com/social/ios/quick-integration" target="_blank" rel="noopener">http://dev.umeng.com/social/ios/quick-integration</a></p>
+<a id="more"></a>
 <p><img src="http://upload-images.jianshu.io/upload_images/5914307-d44b27016096acf2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="友盟"></p>
-<p>在使用U-Share之前 需要下载U-ShareSDK并根据官方文档配置工程<br>白名单,URL Scheme，回调地址等等<br>文档：<a href="http://dev.umeng.com/social/ios/quick-integration" target="_blank" rel="noopener">http://dev.umeng.com/social/ios/quick-integration</a></p>
 <p>调用方式</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#warning --- U-Share测试</span></span><br><span class="line"></span><br><span class="line">SPShareModel * shareModel = [[SPShareModel alloc] init];</span><br><span class="line">shareModel.thumbURL = <span class="string">@"https://mobile.umeng.com/images/pic/home/social/img-1.png"</span>;</span><br><span class="line">shareModel.shareTitle = <span class="string">@"欢迎使用【友盟+】社会化组件U-Share"</span>;</span><br><span class="line">shareModel.shareDesc = <span class="string">@"欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！"</span>;</span><br><span class="line">shareModel.webpageUrl = <span class="string">@"http://mobile.umeng.com/social"</span>;</span><br><span class="line">shareModel.currentViewController = <span class="keyword">self</span>;</span><br><span class="line"></span><br><span class="line">[[SPUShareUtils sharedUShareUtil] showShareMenuWithModel:shareModel];</span><br></pre></td></tr></table></figure>
 <p>具体代码</p>
@@ -426,6 +425,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/05/29/Hanne-s-Introduce/" rel="next" title="Hanne's 简历">
+                <i class="fa fa-chevron-left"></i> Hanne's 简历
+              </a>
             
           </div>
 
@@ -507,7 +510,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -518,7 +521,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -529,7 +532,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
