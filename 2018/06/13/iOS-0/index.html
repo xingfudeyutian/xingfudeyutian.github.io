@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Discussions1.Objective-C底层实现其实都是C\C++    Objective-C  —&amp;gt; C\C++ —&amp;gt; 汇编语言 —&amp;gt; 机器语言2.Objective-C的面向对象都是基于C\C++的数据结构实现的    Objective-C的对象、类主要是基于C\C++的结构体实现的 1234567891011121314151617181920212223242">
+<meta name="description" content="Discussions1.Objective-C底层实现其实都是C\C++    Objective-C  —&amp;gt; C\C++ —&amp;gt; 汇编语言 —&amp;gt; 机器语言2.Objective-C的面向对象都是基于C\C++的数据结构实现的    Objective-C的对象、类主要是基于C\C++的结构体实现的">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OC对象的本质 | MJ ❤︎ idol notes_0">
 <meta property="og:url" content="http://yoursite.com/2018/06/13/iOS-0/index.html">
 <meta property="og:site_name" content="HANNE&#39;S BLOG">
-<meta property="og:description" content="Discussions1.Objective-C底层实现其实都是C\C++    Objective-C  —&amp;gt; C\C++ —&amp;gt; 汇编语言 —&amp;gt; 机器语言2.Objective-C的面向对象都是基于C\C++的数据结构实现的    Objective-C的对象、类主要是基于C\C++的结构体实现的 1234567891011121314151617181920212223242">
+<meta property="og:description" content="Discussions1.Objective-C底层实现其实都是C\C++    Objective-C  —&amp;gt; C\C++ —&amp;gt; 汇编语言 —&amp;gt; 机器语言2.Objective-C的面向对象都是基于C\C++的数据结构实现的    Objective-C的对象、类主要是基于C\C++的结构体实现的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-14T08:54:39.217Z">
+<meta property="og:updated_time" content="2018-06-26T07:58:45.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OC对象的本质 | MJ ❤︎ idol notes_0">
-<meta name="twitter:description" content="Discussions1.Objective-C底层实现其实都是C\C++    Objective-C  —&amp;gt; C\C++ —&amp;gt; 汇编语言 —&amp;gt; 机器语言2.Objective-C的面向对象都是基于C\C++的数据结构实现的    Objective-C的对象、类主要是基于C\C++的结构体实现的 1234567891011121314151617181920212223242">
+<meta name="twitter:description" content="Discussions1.Objective-C底层实现其实都是C\C++    Objective-C  —&amp;gt; C\C++ —&amp;gt; 汇编语言 —&amp;gt; 机器语言2.Objective-C的面向对象都是基于C\C++的数据结构实现的    Objective-C的对象、类主要是基于C\C++的结构体实现的">
 
 
 
@@ -308,8 +308,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-06-14T16:54:39+08:00">
-                2018-06-14
+              <time title="Post modified" itemprop="dateModified" datetime="2018-06-26T15:58:45+08:00">
+                2018-06-26
               </time>
             
           </span>
@@ -365,6 +365,7 @@
 
       
         <h1 id="Discussions"><a href="#Discussions" class="headerlink" title="Discussions"></a>Discussions</h1><p><strong>1.Objective-C底层实现其实都是C\C++</strong><br>    Objective-C  —&gt; C\C++ —&gt; 汇编语言 —&gt; 机器语言<br><strong>2.Objective-C的面向对象都是基于C\C++的数据结构实现的</strong><br>    Objective-C的对象、类主要是基于C\C++的结构体实现的</p>
+<a id="more"></a>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">NSObject</span> *obj = [[<span class="built_in">NSObject</span> alloc] init];</span><br><span class="line"></span><br><span class="line">&lt;!-- 生成cpp文件 --&gt;</span><br><span class="line">clang -rewrite-objc main.m -o main.cpp</span><br><span class="line"></span><br><span class="line">&lt;!--针对某一平台生成的C\C++文件 xcrun : xcode的工具 --&gt;</span><br><span class="line">xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc main.m -o main-arm64.cpp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//NSObject实际上就是C\C++的结构体</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//NSObject 定义</span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSObject</span></span>&#123;</span><br><span class="line">	Class isa;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Class 是一个指向结构体的指针（8个字节）</span></span><br><span class="line">typdef <span class="keyword">struct</span> objc_class  *Class;</span><br><span class="line"></span><br><span class="line"><span class="comment">//NSObject  Implementation(实现)</span></span><br><span class="line"><span class="keyword">struct</span> <span class="built_in">NSObject_IMPL</span>&#123;</span><br><span class="line">	Class isa;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><p><strong>1.一个NSObject对象占用多少内存？</strong><br> 系统分配了16个字节给NSObject对象（通过malloc_size函数获得）<br> 但NSObject对象内部只使用了8个字节的空间（64bit环境下，可以通过class_getInstanceSize函数获得）</p>
 
