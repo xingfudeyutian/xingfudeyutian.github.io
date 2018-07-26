@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="HANNE&#39;S BLOG">
 <meta property="og:description" content="GitHubLinkProject Link Tips .json文件中不允许有注释代码 rpx: 逻辑分辨率 px：物理上的点设计图建议用iphone6分辨率设计，在iphone6下 1px = 1rpx =0.5 pt iphone6Plus下 1px = 0.6rpx 如果静态样式 用class方式，如果是动态样式 用style方式。 Alt+Shift+F  格式化代码 事件驱动思想，使用">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-13T02:13:26.370Z">
+<meta property="og:updated_time" content="2018-07-20T08:46:43.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序基础Tips">
 <meta name="twitter:description" content="GitHubLinkProject Link Tips .json文件中不允许有注释代码 rpx: 逻辑分辨率 px：物理上的点设计图建议用iphone6分辨率设计，在iphone6下 1px = 1rpx =0.5 pt iphone6Plus下 1px = 0.6rpx 如果静态样式 用class方式，如果是动态样式 用style方式。 Alt+Shift+F  格式化代码 事件驱动思想，使用">
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-07-13T10:13:26+08:00">
-                2018-07-13
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-20T16:46:43+08:00">
+                2018-07-20
               </time>
             
           </span>
@@ -363,8 +363,10 @@
 <li>事件驱动思想，使用事件驱动来实现模块之间传递参数与解耦。比如在A模块发射一个事件，在B模块监听这个事件，中间使用数据来进行传递即可，像这里就是在总模块里面监听子模块里面的音乐播放状态</li>
 <li>数据优先思想，改变UI，只需要改变该数据绑定的对应数据就可以，这点和angular，iOS中的ARC，响应式编程思想类似。</li>
 <li>数据绑定优势还有，一个数据可以绑定多个事件，这样只需要在js文件里面写上对应的多个事件即可，不用像jQuery一样要获取多个dom元素才能进行多个事件描述。方便做单元测试。</li>
+<li>公共模板中的图片引用，建议用绝对路径，防止相对路径在其他页面找不到。</li>
+<li>小程序无法在真机上清除缓存，只能通过写入一个清除缓存的事件来实现手动清除。<a id="more"></a>
+</li>
 </ul>
-<a id="more"></a>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wx:<span class="keyword">if</span>=<span class="string">"&#123;&#123;condition&#125;&#125;"</span> 动态控制组件</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//只有被&lt;text&gt;&lt;/text&gt;标签包围的文字才能长按选中</span></span><br><span class="line"><span class="comment">//嵌套&lt;text&gt;&lt;/text&gt;</span></span><br><span class="line">&lt;text <span class="class"><span class="keyword">class</span></span>=<span class="string">'user-name'</span>&gt;&lt;text style='color:red'&gt;Hello&lt;/text&gt; Hanne&lt;<span class="regexp">/text&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//页面跳转</span></span><br><span class="line">wx.navigateTo(&#123;</span><br><span class="line">	&lt;!-- 跳转到子页面 （只能有五级）--&gt;</span><br><span class="line">  url: <span class="string">'../posts/post'</span>,</span><br><span class="line">&#125;)</span><br><span class="line">wx.redirectTo(&#123;</span><br><span class="line">	&lt;!-- 平行跳转，不可返回上一页面 --&gt;</span><br><span class="line">  url: <span class="string">'../posts/post'</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -570,20 +572,6 @@
           
 
           
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://zynlo.xyz/" title="Sherlock's Blog" target="_blank">Sherlock's Blog</a>
-                  </li>
-                
-              </ul>
-            </div>
           
 
           
